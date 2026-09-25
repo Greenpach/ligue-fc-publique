@@ -32,3 +32,8 @@
   font-weight: 800;
   color: var(--color-text-primary);
 }
+.home__header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
