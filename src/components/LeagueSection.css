@@ -1,0 +1,23 @@
+.league-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.league-section__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.league-section__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.league-section__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}

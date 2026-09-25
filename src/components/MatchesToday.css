@@ -1,0 +1,14 @@
+.matches-today {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.matches-today__message {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.matches-today__message--error {
+  color: #dc2626;
+}

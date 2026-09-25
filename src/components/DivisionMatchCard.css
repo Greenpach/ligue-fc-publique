@@ -1,0 +1,22 @@
+.division-card {
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-border-accent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 16px 20px;
+}
+
+.division-card__header {
+  margin-bottom: 8px;
+}
+
+.division-card__name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-text-primary);
+}
+
+.division-card__matches {
+  display: flex;
+  flex-direction: column;
+}

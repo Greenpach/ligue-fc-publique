@@ -1,0 +1,87 @@
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background-color: var(--color-sidebar-bg);
+  padding: 24px 16px;
+}
+
+.sidebar__section-title {
+  margin: 0 0 12px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-sidebar-text-muted);
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar__league-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 8px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-sidebar-text);
+  text-align: left;
+}
+
+.sidebar__league-button:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.sidebar__league-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.sidebar__league-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.sidebar__chevron {
+  transition: transform 0.15s ease;
+  color: var(--color-sidebar-text-muted);
+}
+
+.sidebar__chevron--open {
+  transform: rotate(90deg);
+}
+
+.sidebar__divisions {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 0 8px 46px;
+}
+
+.sidebar__division {
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-sidebar-text);
+  font-size: 14px;
+  text-align: left;
+}
+
+.sidebar__division:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
