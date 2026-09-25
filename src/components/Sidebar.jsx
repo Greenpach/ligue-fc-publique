@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { fetchLeagues } from "../api/publicApi";
 import { leagueColor } from "../utils/leagueColor";
 import { leagueInitials } from "../utils/leagueInitials";
@@ -59,15 +60,13 @@ export default function Sidebar() {
               {isOpen && divisions.length > 0 && (
                 <div className="sidebar__divisions">
                   {divisions.map((division) => (
-                    // La page Division n'existe pas encore : ce sera un
-                    // <Link to={`/divisions/${division.id}`}> une fois codee.
-                    <button
+                    <Link
                       key={division.id}
-                      type="button"
+                      to={`/divisions/${division.id}`}
                       className="sidebar__division"
                     >
                       {division.name}
-                    </button>
+                    </Link>
                   ))}
                 </div>
               )}

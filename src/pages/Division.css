@@ -1,0 +1,44 @@
+.division-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 40px;
+}
+
+.division-page__back {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.division-page__back:hover {
+  color: var(--color-border-accent);
+}
+
+.division-page__breadcrumb {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.division-page__title {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.division-page__message {
+  padding: 40px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.division-page__message--error {
+  color: #dc2626;
+}

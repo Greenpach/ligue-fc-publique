@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Division from "./pages/Division";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      {/* La route "/divisions/:id" sera ajoutee avec la page Division */}
+      <Route path="/divisions/:id" element={<Division />} />
     </Routes>
   );
 }

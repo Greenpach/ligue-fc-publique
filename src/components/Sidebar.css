@@ -73,6 +73,7 @@
 }
 
 .sidebar__division {
+  display: block;
   padding: 8px 12px;
   background: transparent;
   border: none;
@@ -80,6 +81,7 @@
   color: var(--color-sidebar-text);
   font-size: 14px;
   text-align: left;
+  text-decoration: none;
 }
 
 .sidebar__division:hover {
