@@ -15,3 +15,18 @@ export function fetchLeagues() {
 export function fetchMatchesToday(date) {
   return apiGet("/public/matches/today", { date });
 }
+
+/**
+ * En-tete d'une division (nom, ligue, saison) pour le fil d'ariane
+ * de la page Division.
+ */
+export function fetchDivision(divisionId) {
+  return apiGet(`/public/divisions/${divisionId}`);
+}
+
+/**
+ * Classement d'une division.
+ */
+export function fetchDivisionStandings(divisionId) {
+  return apiGet(`/public/divisions/${divisionId}/standings`);
+}
