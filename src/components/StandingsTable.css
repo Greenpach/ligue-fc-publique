@@ -127,3 +127,8 @@
   background-color: #cbd5e1;
   color: #64748b;
 }
+.standings-table__player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

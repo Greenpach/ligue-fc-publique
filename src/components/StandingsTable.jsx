@@ -1,3 +1,4 @@
+import PlayerBadge from "./PlayerBadge";
 import "./StandingsTable.css";
 
 export default function StandingsTable({ standings, divisionLevel }) {
@@ -43,7 +44,16 @@ export default function StandingsTable({ standings, divisionLevel }) {
           return (
             <tr key={row.player_id} className={rowClassName || undefined}>
               <td className="standings-table__rank">{index + 1}</td>
-              <td className="standings-table__player-col">{row.player_name}</td>
+              <td className="standings-table__player-col">
+                <div className="standings-table__player">
+                  <PlayerBadge
+                    playerId={row.player_id}
+                    name={row.player_name}
+                    size={24}
+                  />
+                  <span>{row.player_name}</span>
+                </div>
+              </td>
               <td>{row.mj}</td>
               <td>{row.v}</td>
               <td>{row.n}</td>

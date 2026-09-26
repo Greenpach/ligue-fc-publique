@@ -1,3 +1,4 @@
+import PlayerBadge from "./PlayerBadge";
 import "./MatchRow.css";
 
 export default function MatchRow({ match }) {
@@ -10,7 +11,13 @@ export default function MatchRow({ match }) {
       <span className="match-row__player match-row__player--home">
         {match.home_player.name}
       </span>
-      <span className="match-row__avatar" />
+      <span className="match-row__avatar">
+        <PlayerBadge
+          playerId={match.home_player.id}
+          name={match.home_player.name}
+          size={32}
+        />
+      </span>
 
       <div className="match-row__center">
         {isPlayed ? (
@@ -32,7 +39,13 @@ export default function MatchRow({ match }) {
         )}
       </div>
 
-      <span className="match-row__avatar" />
+      <span className="match-row__avatar">
+        <PlayerBadge
+          playerId={match.away_player.id}
+          name={match.away_player.name}
+          size={32}
+        />
+      </span>
       <span className="match-row__player match-row__player--away">
         {match.away_player.name}
       </span>
