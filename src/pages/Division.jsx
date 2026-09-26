@@ -51,7 +51,11 @@ export default function Division() {
       </p>
       <h1 className="division-page__title">{division.name}</h1>
 
-      <StandingsTable standings={standings} divisionLevel={division.level} />
+      <StandingsTable
+        standings={standings}
+        divisionLevel={division.level}
+        hasLowerDivision={division.has_lower_division}
+      />
     </div>
   );
 }

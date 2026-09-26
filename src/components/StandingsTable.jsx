@@ -1,7 +1,11 @@
 import PlayerBadge from "./PlayerBadge";
 import "./StandingsTable.css";
 
-export default function StandingsTable({ standings, divisionLevel }) {
+export default function StandingsTable({
+  standings,
+  divisionLevel,
+  hasLowerDivision,
+}) {
   if (standings.length === 0) {
     return (
       <p className="standings-table__empty">
@@ -11,7 +15,11 @@ export default function StandingsTable({ standings, divisionLevel }) {
   }
 
   const total = standings.length;
-  const hasPromotionZone = divisionLevel > 1;
+  const isTopDivision = divisionLevel === 1;
+  const promotionCount = isTopDivision ? 4 : 3;
+  const promotionLabel = isTopDivision
+    ? "Qualifie pour la Ligue des Champions"
+    : "Zone de promotion";
 
   return (
     <>
@@ -34,8 +42,8 @@ export default function StandingsTable({ standings, divisionLevel }) {
           </thead>
           <tbody>
             {standings.map((row, index) => {
-              const isRelegation = index >= total - 3;
-              const isPromotion = hasPromotionZone && index < 3;
+              const isRelegation = hasLowerDivision && index >= total - 3;
+              const isPromotion = index < promotionCount;
 
               const rowClassName = [
                 isRelegation && "standings-table__row--relegation",
@@ -102,16 +110,16 @@ export default function StandingsTable({ standings, divisionLevel }) {
       </div>
 
       <div className="standings-table__legend">
-        <span className="standings-table__legend-item">
-          <span className="standings-table__legend-swatch standings-table__legend-swatch--relegation" />
-          Zone de relegation
-        </span>
-        {hasPromotionZone && (
+        {hasLowerDivision && (
           <span className="standings-table__legend-item">
-            <span className="standings-table__legend-swatch standings-table__legend-swatch--promotion" />
-            Zone de promotion
+            <span className="standings-table__legend-swatch standings-table__legend-swatch--relegation" />
+            Zone de relegation
           </span>
         )}
+        <span className="standings-table__legend-item">
+          <span className="standings-table__legend-swatch standings-table__legend-swatch--promotion" />
+          {promotionLabel}
+        </span>
       </div>
     </>
   );
