@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { fetchDivision, fetchDivisionStandings } from "../api/publicApi";
 import StandingsTable from "../components/StandingsTable";
 import "./Division.css";
 
 export default function Division() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [division, setDivision] = useState(null);
   const [standings, setStandings] = useState([]);
@@ -42,9 +43,13 @@ export default function Division() {
 
   return (
     <div className="division-page">
-      <Link to="/" className="division-page__back">
-        ‹ Retour a l'accueil
-      </Link>
+      <button
+        type="button"
+        className="division-page__back"
+        onClick={() => navigate(-1)}
+      >
+        ‹ Retour
+      </button>
 
       <p className="division-page__breadcrumb">
         {division.league.name} · {division.season.name}
