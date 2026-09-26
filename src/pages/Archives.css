@@ -1,0 +1,66 @@
+.archives {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 40px;
+}
+
+.archives__eyebrow {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.archives__title {
+  margin: 0 0 24px;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.archives__league {
+  margin-bottom: 28px;
+}
+
+.archives__league-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.archives__seasons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.archives__season-card {
+  display: block;
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-border-accent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.archives__message {
+  padding: 40px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.archives__message--error {
+  color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .archives {
+    padding: 20px 16px;
+  }
+}

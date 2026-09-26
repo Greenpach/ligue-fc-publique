@@ -30,3 +30,16 @@ export function fetchDivision(divisionId) {
 export function fetchDivisionStandings(divisionId) {
   return apiGet(`/public/divisions/${divisionId}/standings`);
 }
+/**
+ * Toutes les saisons d'une ligue (toutes statuts confondus).
+ */
+export function fetchLeagueSeasons(leagueId) {
+  return apiGet(`/public/leagues/${leagueId}/seasons`);
+}
+
+/**
+ * Divisions d'une saison, avec son contexte ligue.
+ */
+export function fetchSeasonDivisions(seasonId) {
+  return apiGet(`/public/seasons/${seasonId}/divisions`);
+}

@@ -1,0 +1,68 @@
+.archive-season {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 40px;
+}
+
+.archive-season__back {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.archive-season__back:hover {
+  color: var(--color-border-accent);
+}
+
+.archive-season__breadcrumb {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.archive-season__title {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.archive-season__divisions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.archive-season__division-card {
+  display: block;
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-border-accent);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.archive-season__message {
+  padding: 40px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.archive-season__message--error {
+  color: #dc2626;
+}
+
+@media (max-width: 768px) {
+  .archive-season {
+    padding: 20px 16px;
+  }
+}
