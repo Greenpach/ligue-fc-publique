@@ -42,3 +42,12 @@
 .division-page__message--error {
   color: #dc2626;
 }
+@media (max-width: 768px) {
+  .division-page {
+    padding: 20px 16px;
+  }
+
+  .division-page__title {
+    font-size: 24px;
+  }
+}
