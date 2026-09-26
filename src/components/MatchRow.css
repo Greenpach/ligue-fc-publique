@@ -74,3 +74,28 @@
 .match-row__status--upcoming {
   color: var(--color-status-upcoming);
 }
+
+@media (max-width: 768px) {
+  .match-row {
+    grid-template-columns: 28px 1fr 28px auto 28px 1fr;
+    gap: 6px;
+    padding: 10px 0;
+  }
+
+  .match-row__player {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .match-row__round {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .match-row__center {
+    min-width: 55px;
+  }
+}
