@@ -5,13 +5,25 @@ import DateSelector from "../components/DateSelector";
 import MatchesToday from "../components/MatchesToday";
 import "./Home.css";
 
+const MOBILE_BREAKPOINT = 768;
+
 export default function Home() {
   const [selectedDate, setSelectedDate] = useState(() => new Date());
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(
+    () => window.innerWidth >= MOBILE_BREAKPOINT,
+  );
 
   return (
     <div className="home">
-      {isSidebarOpen && <Sidebar />}
+      {isSidebarOpen && (
+        <>
+          <div
+            className="sidebar-backdrop"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+          <Sidebar />
+        </>
+      )}
 
       <main className="home__content">
         <div className="home__header">

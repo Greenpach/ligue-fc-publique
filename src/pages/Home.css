@@ -37,3 +37,12 @@
   align-items: center;
   gap: 16px;
 }
+@media (max-width: 768px) {
+  .home__content {
+    padding: 20px 16px;
+  }
+
+  .home__title {
+    font-size: 26px;
+  }
+}
