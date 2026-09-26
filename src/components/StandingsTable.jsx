@@ -25,13 +25,11 @@ export default function StandingsTable({ standings, divisionLevel }) {
           <th>BC</th>
           <th>Diff</th>
           <th>Pts</th>
+          <th>Forme</th>
         </tr>
       </thead>
       <tbody>
         {standings.map((row, index) => {
-          // Niveau 1 = division la plus haute : rien a promouvoir au-dessus,
-          // seule la relegation (3 derniers) s'applique. A partir du niveau 2,
-          // les 3 premiers sont promouvables vers la division du dessus.
           const isRelegation = index >= total - 3;
           const isPromotion = divisionLevel > 1 && index < 3;
 
@@ -54,6 +52,24 @@ export default function StandingsTable({ standings, divisionLevel }) {
               <td>{row.bc}</td>
               <td>{row.diff > 0 ? `+${row.diff}` : row.diff}</td>
               <td className="standings-table__points">{row.points}</td>
+              <td>
+                <div className="standings-table__form">
+                  {Array.from({ length: 5 }, (_, i) => row.form[i] ?? null).map(
+                    (result, i) => (
+                      <span
+                        key={i}
+                        className={
+                          result
+                            ? `standings-table__form-dot standings-table__form-dot--${result.toLowerCase()}`
+                            : "standings-table__form-dot standings-table__form-dot--unknown"
+                        }
+                      >
+                        {result ?? "?"}
+                      </span>
+                    ),
+                  )}
+                </div>
+              </td>
             </tr>
           );
         })}
