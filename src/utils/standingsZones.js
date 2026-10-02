@@ -9,7 +9,7 @@ export function getStandingsZones({ divisionLevel, hasLowerDivision, total }) {
   return {
     promotionCount: isTopDivision ? 4 : 3,
     promotionLabel: isTopDivision
-      ? "Qualifie pour la Ligue des Champions"
+      ? "Qualifié pour la Ligue des Champions"
       : "Zone de promotion",
     hasRelegationZone: Boolean(hasLowerDivision),
     relegationStartIndex: total - 3,
