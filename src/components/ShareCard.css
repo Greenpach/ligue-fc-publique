@@ -1,0 +1,217 @@
+.share-card {
+  width: 1080px;
+  min-height: 1350px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eef3fb;
+  color: #0f172a;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+.share-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 56px;
+  background-color: #0f1b34;
+}
+
+.share-card__brand {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  color: #ffffff;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.share-card__logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+}
+
+.share-card__date {
+  color: #c7d2e3;
+  font-size: 34px;
+}
+
+.share-card__title-block {
+  padding: 56px 56px 32px;
+}
+
+.share-card__league {
+  margin: 0;
+  font-size: 104px;
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.share-card__division {
+  display: inline-block;
+  margin: 28px 0 20px;
+  padding: 10px 40px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.share-card__subtitle {
+  margin: 0;
+  font-size: 40px;
+  color: #64748b;
+}
+
+.share-card__body {
+  flex: 1;
+  padding: 0 56px 32px;
+}
+
+.share-card__footer {
+  margin: 0;
+  padding: 28px 56px 44px;
+  text-align: center;
+  font-size: 30px;
+  color: #64748b;
+}
+
+.share-table {
+  background-color: #ffffff;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.share-table__row {
+  display: grid;
+  grid-template-columns: 70px 1fr 64px 64px 64px 64px 84px 250px;
+  gap: 12px;
+  align-items: center;
+  height: 54px;
+  padding: 0 28px;
+  font-size: 32px;
+}
+
+.share-table__row > span {
+  text-align: center;
+}
+
+.share-table__row > .share-table__name {
+  text-align: left;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.share-table__row--head {
+  height: 60px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #64748b;
+  border-bottom: 2px solid #eef1f7;
+}
+
+.share-table__row--promotion {
+  background-color: #f0fdf4;
+}
+
+.share-table__row--relegation {
+  background-color: #fef2f2;
+}
+
+.share-table__rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  border-radius: 10px;
+  background-color: #0f172a;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.share-table__rank--promotion {
+  background-color: #16a34a;
+}
+
+.share-table__rank--relegation {
+  background-color: #dc2626;
+}
+
+.share-table__points {
+  font-weight: 800;
+}
+
+.share-table__form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.share-table__dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.share-table__dot--v {
+  background-color: #16a34a;
+}
+
+.share-table__dot--n {
+  background-color: #94a3b8;
+}
+
+.share-table__dot--d {
+  background-color: #dc2626;
+}
+
+.share-table__dot--unknown {
+  background-color: #cbd5e1;
+  color: #64748b;
+}
+
+.share-legend {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  margin-top: 32px;
+  font-size: 28px;
+  color: #64748b;
+}
+
+.share-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.share-legend__swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+}
+
+.share-legend__swatch--promotion {
+  background-color: #16a34a;
+}
+
+.share-legend__swatch--relegation {
+  background-color: #dc2626;
+}

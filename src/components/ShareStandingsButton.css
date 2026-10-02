@@ -1,0 +1,38 @@
+.share-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.share-button {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-accent);
+  background-color: var(--color-surface);
+  color: var(--color-border-accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.share-button:hover {
+  background-color: #eff6ff;
+}
+
+.share-button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.share-actions__message {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.share-offscreen {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 1080px;
+  pointer-events: none;
+}

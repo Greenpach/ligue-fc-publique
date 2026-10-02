@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchDivision, fetchDivisionStandings } from "../api/publicApi";
 import StandingsTable from "../components/StandingsTable";
+import ShareStandingsButton from "../components/ShareStandingsButton";
 import "./Division.css";
 
 export default function Division() {
@@ -55,6 +56,10 @@ export default function Division() {
         {division.league.name} · {division.season.name}
       </p>
       <h1 className="division-page__title">{division.name}</h1>
+
+      {standings.length > 0 && (
+        <ShareStandingsButton division={division} standings={standings} />
+      )}
 
       <StandingsTable
         standings={standings}
