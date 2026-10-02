@@ -29,3 +29,15 @@ export function formatShortDate(date) {
     month: "short",
   }).format(date);
 }
+
+/**
+ * Formate une date en toutes lettres ("2 octobre 2026"), pour les
+ * images de partage.
+ */
+export function formatLongDate(date) {
+  return new Intl.DateTimeFormat("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+}
