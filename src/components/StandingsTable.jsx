@@ -1,4 +1,5 @@
 import PlayerBadge from "./PlayerBadge";
+import { getStandingsZones, getRowZone } from "../utils/standingsZones";
 import "./StandingsTable.css";
 
 export default function StandingsTable({
@@ -14,12 +15,11 @@ export default function StandingsTable({
     );
   }
 
-  const total = standings.length;
-  const isTopDivision = divisionLevel === 1;
-  const promotionCount = isTopDivision ? 4 : 3;
-  const promotionLabel = isTopDivision
-    ? "Qualifie pour la Ligue des Champions"
-    : "Zone de promotion";
+  const zones = getStandingsZones({
+    divisionLevel,
+    hasLowerDivision,
+    total: standings.length,
+  });
 
   return (
     <>
@@ -42,26 +42,21 @@ export default function StandingsTable({
           </thead>
           <tbody>
             {standings.map((row, index) => {
-              const isRelegation = hasLowerDivision && index >= total - 3;
-              const isPromotion = index < promotionCount;
+              const zone = getRowZone(index, zones);
 
-              const rowClassName = [
-                isRelegation && "standings-table__row--relegation",
-                isPromotion && "standings-table__row--promotion",
-              ]
-                .filter(Boolean)
-                .join(" ");
+              const rowClassName = zone
+                ? `standings-table__row--${zone}`
+                : undefined;
 
               const rankBadgeClassName = [
                 "standings-table__rank-badge",
-                isRelegation && "standings-table__rank-badge--relegation",
-                isPromotion && "standings-table__rank-badge--promotion",
+                zone && `standings-table__rank-badge--${zone}`,
               ]
                 .filter(Boolean)
                 .join(" ");
 
               return (
-                <tr key={row.player_id} className={rowClassName || undefined}>
+                <tr key={row.player_id} className={rowClassName}>
                   <td className="standings-table__rank">
                     <span className={rankBadgeClassName}>{index + 1}</span>
                   </td>
@@ -110,7 +105,7 @@ export default function StandingsTable({
       </div>
 
       <div className="standings-table__legend">
-        {hasLowerDivision && (
+        {zones.hasRelegationZone && (
           <span className="standings-table__legend-item">
             <span className="standings-table__legend-swatch standings-table__legend-swatch--relegation" />
             Zone de relegation
@@ -118,7 +113,7 @@ export default function StandingsTable({
         )}
         <span className="standings-table__legend-item">
           <span className="standings-table__legend-swatch standings-table__legend-swatch--promotion" />
-          {promotionLabel}
+          {zones.promotionLabel}
         </span>
       </div>
     </>
