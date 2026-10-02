@@ -215,3 +215,78 @@
 .share-legend__swatch--relegation {
   background-color: #dc2626;
 }
+
+.share-matches {
+  background-color: #ffffff;
+  border-left: 14px solid #16a34a;
+  border-radius: 28px;
+  padding: 6px 36px;
+}
+
+.share-match {
+  display: grid;
+  grid-template-columns: 1fr 52px 180px 52px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 2px solid #eef1f7;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.share-match:last-child {
+  border-bottom: none;
+}
+
+.share-match__player {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.share-match__player--home {
+  text-align: right;
+}
+
+.share-match__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.share-match__score {
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.share-match__vs {
+  font-size: 34px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.share-match__status {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.share-match__status--played {
+  color: #16a34a;
+}
+
+.share-matches--roomy .share-match {
+  padding: 28px 0;
+}
+
+.share-matches--normal .share-match {
+  padding: 12px 0;
+}
+
+.share-matches--compact .share-match {
+  padding: 4px 0;
+}

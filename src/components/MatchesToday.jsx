@@ -60,6 +60,7 @@ export default function MatchesToday({ selectedDate }) {
           key={entry.league.id}
           league={entry.league}
           divisions={entry.divisions}
+          selectedDate={selectedDate}
         />
       ))}
     </div>
