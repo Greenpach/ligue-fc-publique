@@ -58,7 +58,10 @@ export default function StandingsTable({
               return (
                 <tr key={row.player_id} className={rowClassName}>
                   <td className="standings-table__rank">
-                    <span className={rankBadgeClassName}>{index + 1}</span>
+                    <span className={rankBadgeClassName}>
+                      {row.rank}
+                      {row.ex_aequo && "="}
+                    </span>
                   </td>
                   <td className="standings-table__player-col">
                     <div className="standings-table__player">
@@ -115,7 +118,15 @@ export default function StandingsTable({
           <span className="standings-table__legend-swatch standings-table__legend-swatch--promotion" />
           {zones.promotionLabel}
         </span>
+        {standings.some((row) => row.ex_aequo) && (
+          <span className="standings-table__legend-item">= ex æquo</span>
+        )}
       </div>
+
+      <p className="standings-table__tiebreak">
+        Départage : points, confrontation directe, différence de buts, buts
+        marqués, victoires.
+      </p>
     </>
   );
 }
