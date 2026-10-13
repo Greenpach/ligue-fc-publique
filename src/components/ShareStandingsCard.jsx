@@ -40,7 +40,8 @@ export default function ShareStandingsCard({ division, standings }) {
               <span
                 className={`share-table__rank${zone ? ` share-table__rank--${zone}` : ""}`}
               >
-                {index + 1}
+                {row.rank}
+                {row.ex_aequo && "="}
               </span>
               <span className="share-table__name">{row.player_name}</span>
               <span>{row.mj}</span>
@@ -76,7 +77,15 @@ export default function ShareStandingsCard({ division, standings }) {
           <span className="share-legend__swatch share-legend__swatch--promotion" />
           {zones.promotionLabel}
         </span>
+        {standings.some((row) => row.ex_aequo) && (
+          <span className="share-legend__item">= ex æquo</span>
+        )}
       </div>
+
+      <p className="share-tiebreak">
+        Départage : points, confrontation directe, différence de buts, buts
+        marqués, victoires.
+      </p>
     </ShareCardFrame>
   );
 }

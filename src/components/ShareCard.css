@@ -216,6 +216,13 @@
   background-color: #dc2626;
 }
 
+.share-tiebreak {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 24px;
+  color: #64748b;
+}
+
 .share-matches {
   background-color: #ffffff;
   border-left: 14px solid #16a34a;
