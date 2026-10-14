@@ -88,6 +88,26 @@
   background-color: rgba(255, 255, 255, 0.08);
 }
 
+/* Ligue des Champions : meme look qu'une ligue, separee d'elles par un
+   espace vertical (pas de decalage horizontal). */
+.sidebar__competitions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 20px;
+}
+
+.sidebar__competition {
+  text-decoration: none;
+}
+
+/* Le bleu de la Ligue des Champions se confondrait avec le fond du menu :
+   un fin contour clair garde le badge visible. */
+.sidebar__league-badge--champions {
+  background-color: #0c2a77;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.55);
+}
+
 .sidebar-backdrop {
   display: none;
 }
