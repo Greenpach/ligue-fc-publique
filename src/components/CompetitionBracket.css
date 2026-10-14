@@ -1,0 +1,132 @@
+.bracket {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Les colonnes ont toutes la hauteur de la plus haute : les cartes des
+   phases suivantes se centrent ainsi entre celles de la phase d'avant. */
+.bracket__col {
+  flex: 0 0 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bracket__title {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.bracket__ties {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.bracket-tie {
+  background-color: var(--color-surface);
+  border-left: 4px solid #0c2a77;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 10px 12px;
+}
+
+.bracket-tie--pending {
+  border-left-color: #cbd5e1;
+  color: #94a3b8;
+  font-size: 13px;
+  text-align: center;
+  padding: 18px 12px;
+}
+
+.bracket-tie__player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
+.bracket-tie__player--winner {
+  font-weight: 700;
+  color: #0c2a77;
+}
+
+.bracket-tie__who {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.bracket-tie__name {
+  min-width: 0;
+}
+
+.bracket-tie__league {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+.bracket-tie__goals {
+  min-width: 18px;
+  text-align: right;
+  font-weight: 700;
+}
+
+.bracket-tie__detail {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid #eef1f7;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.bracket__champion {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background-color: #0c2a77;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bracket__message {
+  padding: 40px 0;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+/* Sur telephone, le tableau horizontal oblige a faire glisser : on empile
+   les phases verticalement, chaque carte prend toute la largeur. */
+@media (max-width: 768px) {
+  .bracket {
+    flex-direction: column;
+    gap: 20px;
+    overflow-x: visible;
+  }
+
+  .bracket__col {
+    flex: none;
+    width: 100%;
+  }
+
+  .bracket__ties {
+    flex: none;
+    justify-content: flex-start;
+  }
+}

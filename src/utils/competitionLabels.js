@@ -27,3 +27,10 @@ export function roundTitle(round) {
 
   return label;
 }
+
+/**
+ * Nom affichable d'une phase ("quarter_final" -> "Quarts de finale").
+ */
+export function phaseLabel(phase) {
+  return PHASE_LABELS[phase] ?? phase;
+}

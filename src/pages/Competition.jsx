@@ -4,6 +4,7 @@ import { fetchCompetitions } from "../api/publicApi";
 import SlideSwitch from "../components/SlideSwitch";
 import "./Competition.css";
 import CompetitionStandings from "../components/CompetitionStandings";
+import CompetitionBracket from "../components/CompetitionBracket";
 
 const VIEWS = [
   { value: "standings", label: "Classement" },
@@ -75,7 +76,7 @@ export default function Competition() {
         {view === "standings" ? (
           <CompetitionStandings competitionId={id} />
         ) : (
-          <p className="competition-page__message">Phase finale a venir.</p>
+          <CompetitionBracket competitionId={id} />
         )}
       </div>
     </div>
