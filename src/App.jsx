@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Division from "./pages/Division";
 import Archives from "./pages/Archives";
 import ArchiveSeason from "./pages/ArchiveSeason";
+import Competition from "./pages/Competition";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/divisions/:id" element={<Division />} />
         <Route path="/archives" element={<Archives />} />
         <Route path="/archives/seasons/:seasonId" element={<ArchiveSeason />} />
+        <Route path="/competitions/:id" element={<Competition />} />
       </Routes>
     </>
   );
