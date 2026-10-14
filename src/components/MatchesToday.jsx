@@ -1,20 +1,33 @@
 import { useEffect, useState } from "react";
-import { fetchMatchesToday } from "../api/publicApi";
+import {
+  fetchMatchesToday,
+  fetchCompetitionMatchesToday,
+} from "../api/publicApi";
 import { toApiDateString } from "../utils/date";
 import LeagueSection from "./LeagueSection";
+import CompetitionSection from "./CompetitionSection";
 import "./MatchesToday.css";
 
 export default function MatchesToday({ selectedDate }) {
   const dateKey = toApiDateString(selectedDate);
 
   const [leagues, setLeagues] = useState([]);
+  const [competitions, setCompetitions] = useState([]);
   const [status, setStatus] = useState("success"); // success | error
   const [loadedDateKey, setLoadedDateKey] = useState(null);
 
   useEffect(() => {
-    fetchMatchesToday(dateKey)
-      .then((data) => {
+    Promise.all([
+      fetchMatchesToday(dateKey),
+      // La Ligue des Champions est un "plus" : si sa route echoue, on
+      // affiche quand meme les ligues au lieu de casser toute la page.
+      fetchCompetitionMatchesToday(dateKey).catch(() => ({
+        competitions: [],
+      })),
+    ])
+      .then(([data, competitionData]) => {
         setLeagues(data.leagues);
+        setCompetitions(competitionData.competitions);
         setLoadedDateKey(dateKey);
         setStatus("success");
       })
@@ -45,7 +58,7 @@ export default function MatchesToday({ selectedDate }) {
     );
   }
 
-  if (leagues.length === 0) {
+  if (leagues.length === 0 && competitions.length === 0) {
     return (
       <p className="matches-today__message">
         Aucun match prevu pour cette date.
@@ -61,6 +74,14 @@ export default function MatchesToday({ selectedDate }) {
           league={entry.league}
           divisions={entry.divisions}
           selectedDate={selectedDate}
+        />
+      ))}
+
+      {competitions.map((entry) => (
+        <CompetitionSection
+          key={entry.competition.id}
+          competition={entry.competition}
+          rounds={entry.rounds}
         />
       ))}
     </div>
