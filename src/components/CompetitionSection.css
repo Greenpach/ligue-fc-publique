@@ -1,0 +1,71 @@
+/* Bloc "Ligue des Champions" : fond bleu propre a la competition. */
+.competition-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background-color: #0c2a77;
+
+  /* MatchRow lit ces variables : on les redefinit seulement ici pour
+     passer en texte clair, sans toucher au composant ni aux divisions. */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #c7d2fe;
+  --color-status-played: #bbf7d0;
+  --color-status-upcoming: #c7d2fe;
+  --color-badge-bg: rgba(255, 255, 255, 0.16);
+  --color-badge-text: #ffffff;
+}
+
+.competition-section__header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.competition-section__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.competition-section__subtitle {
+  font-size: 13px;
+  color: #c7d2fe;
+}
+
+.competition-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #ffffff;
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+}
+
+.competition-card__header {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.competition-card__matches {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Les separateurs de MatchRow sont en clair : on les adoucit ici. */
+.competition-section .match-row {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 768px) {
+  .competition-section {
+    padding: 12px;
+  }
+
+  .competition-card {
+    padding: 12px;
+  }
+}
