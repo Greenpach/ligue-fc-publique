@@ -43,3 +43,34 @@ export function fetchLeagueSeasons(leagueId) {
 export function fetchSeasonDivisions(seasonId) {
   return apiGet(`/public/seasons/${seasonId}/divisions`);
 }
+
+
+/**
+ * Matchs "du jour" des competitions (Ligue des Champions) pour une date
+ * donnee (YYYY-MM-DD). Un tour s'affiche si la date est dans ses dates.
+ */
+export function fetchCompetitionMatchesToday(date) {
+  return apiGet("/public/competitions/matches-today", { date });
+}
+
+/**
+ * Competitions visibles du public (hors brouillons), les plus recentes
+ * d'abord.
+ */
+export function fetchCompetitions() {
+  return apiGet("/public/competitions");
+}
+
+/**
+ * Classement de la phase de ligue d'une competition.
+ */
+export function fetchCompetitionStandings(competitionId) {
+  return apiGet(`/public/competitions/${competitionId}/standings`);
+}
+
+/**
+ * Tableau de la phase finale d'une competition.
+ */
+export function fetchCompetitionBracket(competitionId) {
+  return apiGet(`/public/competitions/${competitionId}/bracket`);
+}

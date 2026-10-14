@@ -99,3 +99,9 @@
     min-width: 55px;
   }
 }
+.match-row__aggregate {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
