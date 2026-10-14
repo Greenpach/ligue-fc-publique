@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { fetchCompetitions } from "../api/publicApi";
 import SlideSwitch from "../components/SlideSwitch";
 import "./Competition.css";
+import CompetitionStandings from "../components/CompetitionStandings";
 
 const VIEWS = [
   { value: "standings", label: "Classement" },
@@ -72,7 +73,7 @@ export default function Competition() {
 
       <div className="competition-page__content">
         {view === "standings" ? (
-          <p className="competition-page__message">Classement a venir.</p>
+          <CompetitionStandings competitionId={id} />
         ) : (
           <p className="competition-page__message">Phase finale a venir.</p>
         )}
