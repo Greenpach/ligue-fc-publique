@@ -49,6 +49,18 @@
   font-weight: 600;
 }
 
+/* Cartes de la Ligue des Champions : meme forme, bordure bleue propre. */
+.archives__season-card--champions {
+  border-left-color: #0c2a77;
+}
+
+.archives__champion {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
 .archives__message {
   padding: 40px;
   color: var(--color-text-secondary);
